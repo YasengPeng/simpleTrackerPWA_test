@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple tracker</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="icon" href="circle.svg"/>
+</head>
+<body>
+  <h1>Simple tracker</h1>
+  <form>
+    <fieldset>
+      <legend>Enter start and end date</legend>
+      <div class="dateInputContainer">
+        <label for="start-date">Start</label>
+        <input type="date" id="start-date" required>
+      </div>
+      <div class="dateInputContainer">
+        <label for="end-date">End</label>
+        <input type="date" id="end-date" required>
+      </div>
+    </fieldset>
+    <p>
+      <button type="submit">Add period</button>
+    </p>
+  </form>
+  <section class="pastPeriods">
+    <h2>Past periods</h2>
+    <ul>
+      <li>from to <button>X</button></li>
+      <li>from to <button>X</button></li>
+      <li>from to <button>X</button></li>
+    </ul>
+  </section>
+  <p>
+    <button type="button" id="notify">Notify</button>
+  </p>
+  <script src="app.js" defer></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register(
+        'sw.js',
+        {
+          scope: './',
+        }
+      ).then((registration) => {
+        if (registration.installing) {
+          console.log('Service worker installing');
+        } else if (registration.waiting) {
+          console.log('Service worker installed');
+        } else if (registration.active) {
+          console.log('Service worker active');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
