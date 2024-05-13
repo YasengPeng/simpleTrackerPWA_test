@@ -2,6 +2,7 @@ const form = document.querySelector('form');
 const startInput = document.getElementById('start-date');
 const endInput = document.getElementById('end-date');
 const pastPeriods = document.querySelector('.pastPeriods');
+const secondsInput = document.getElementById('seconds-input');
 
 const STORAGE_KEY = 'periods';
 
@@ -118,7 +119,7 @@ function showNotification() {
             vibrate: [200, 100, 200, 100, 200, 100, 200],
             tag: "vibration-sample",
           });
-        }, 3000);
+        }, parseInt(secondsInput.value) * 1000);
       });
     }
   });
