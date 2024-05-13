@@ -2,7 +2,7 @@
   "name": "Simple Period Tracker",
   "short_name": "PT",
   "description": "Just a simple PWA period tracker",
-  "start_url": "/",
+  "start_url": "/simpleTrackerPWA_test/index.html",
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
   "display": "standalone",
